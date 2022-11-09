@@ -1,8 +1,13 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 const url = "http://localhost:3000/products/";
 
 function App() {
+  const inputName = useRef(null);
+  useEffect(() => {
+    inputName.current.focus();
+  }, []);
+  
   const [products, setProducts] = useState([]);
 
   const [name, setName] = useState("");
@@ -17,7 +22,6 @@ function App() {
       const data = await response.json();
 
       setProducts(data);
-      console.log(data);
     }
     fetchData();
   }, []);
@@ -39,6 +43,16 @@ function App() {
       },
       body: JSON.stringify(product),
     });
+
+    // Exibição dinâmica dos dados Adicionandos no POST
+    // Pega o produto do response do POST
+    const addedProduct = await response.json();
+    // Desempacota os Produtos anteriores, e Adiciona o novo no State
+    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // Limpa os inputs
+    setName("");
+    setPrice("");
+    setDescription("");
   };
 
   return (
@@ -61,6 +75,7 @@ function App() {
               value={name}
               name="name"
               onChange={(e) => setName(e.target.value)}
+              ref={inputName}
             />
           </label>
           <label>

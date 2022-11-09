@@ -47,6 +47,24 @@
       "price": "119.99",
       "description": "PENDRIVE PARA FUMAR TOP",
       "id": 8
+    },
+    {
+      "name": "ELFBAR - PEACH JUICE",
+      "price": "119.99",
+      "description": "TOPP DEMAIS VERMEIO",
+      "id": 9
+    },
+    {
+      "name": "ELFBAR - PEACH JUICE",
+      "price": "119.99",
+      "description": "TOPP DEMAIS VERMEIO",
+      "id": 10
+    },
+    {
+      "name": "ELFBAR - Watermelon lemon ic",
+      "price": "123.87",
+      "description": "SINISTRASSOOO",
+      "id": 11
     }
   ]
 }
