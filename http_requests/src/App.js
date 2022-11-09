@@ -10,7 +10,7 @@ function App() {
     inputName.current.focus();
   }, []);
 
-  const { data: items, httpConfig } = useFetch(url);
+  const { data: items, httpConfig, loading } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -40,7 +40,7 @@ function App() {
 
     // Refatorando POST
 
-    httpConfig(product, "POST")
+    httpConfig(product, "POST");
 
     // const response = await fetch(url, {
     //   method: "POST",
@@ -55,7 +55,7 @@ function App() {
     // const addedProduct = await response.json();
     // Desempacota os Produtos anteriores, e Adiciona o novo no State
     // setProducts((prevProducts) => [...prevProducts, addedProduct]);
-    
+
     // Limpa os inputs
     setName("");
     setPrice("");
@@ -65,14 +65,18 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
-      <ul>
-        {items &&
-          items.map((product) => (
-            <li key={product.id}>
-              {product.name} - {product.price}
-            </li>
-          ))}
-      </ul>
+      {/* estado de Load */}
+      {loading && <p>Carregando dados...</p>}
+      {!loading && (
+        <ul>
+          {items &&
+            items.map((product) => (
+              <li key={product.id}>
+                {product.name} - {product.price}
+              </li>
+            ))}
+        </ul>
+      )}
 
       <div className="add-product">
         <form onSubmit={handleSubmit}>
