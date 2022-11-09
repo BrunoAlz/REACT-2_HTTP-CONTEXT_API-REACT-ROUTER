@@ -10,9 +10,7 @@ function App() {
     inputName.current.focus();
   }, []);
 
-  const [products, setProducts] = useState([]);
-
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -40,19 +38,24 @@ function App() {
       description,
     };
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    // Refatorando POST
+
+    httpConfig(product, "POST")
+
+    // const response = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(product),
+    // });
 
     // Exibição dinâmica dos dados Adicionandos no POST
     // Pega o produto do response do POST
-    const addedProduct = await response.json();
+    // const addedProduct = await response.json();
     // Desempacota os Produtos anteriores, e Adiciona o novo no State
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    
     // Limpa os inputs
     setName("");
     setPrice("");
@@ -63,11 +66,12 @@ function App() {
     <div className="App">
       <h1>Lista de Produtos</h1>
       <ul>
-        {items && items.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price}
-          </li>
-        ))}
+        {items &&
+          items.map((product) => (
+            <li key={product.id}>
+              {product.name} - {product.price}
+            </li>
+          ))}
       </ul>
 
       <div className="add-product">
