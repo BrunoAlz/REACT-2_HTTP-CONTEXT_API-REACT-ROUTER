@@ -10,7 +10,7 @@ function App() {
     inputName.current.focus();
   }, []);
 
-  const { data: items, httpConfig, loading } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -67,8 +67,9 @@ function App() {
       <h1>Lista de Produtos</h1>
       {/* estado de Load */}
       {loading && <p>Carregando dados...</p>}
+      {error && <p>{error}</p>}
       <ul>
-        {items &&
+        {error &&
           items.map((product) => (
             <li key={product.id}>
               {product.name} - {product.price}
