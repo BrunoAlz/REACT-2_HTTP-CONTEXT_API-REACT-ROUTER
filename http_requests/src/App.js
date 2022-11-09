@@ -67,16 +67,15 @@ function App() {
       <h1>Lista de Produtos</h1>
       {/* estado de Load */}
       {loading && <p>Carregando dados...</p>}
-      {!loading && (
-        <ul>
-          {items &&
-            items.map((product) => (
-              <li key={product.id}>
-                {product.name} - {product.price}
-              </li>
-            ))}
-        </ul>
-      )}
+      <ul>
+        {items &&
+          items.map((product) => (
+            <li key={product.id}>
+              {product.name} - {product.price}
+            </li>
+          ))}
+      </ul>
+    
 
       <div className="add-product">
         <form onSubmit={handleSubmit}>
@@ -108,7 +107,9 @@ function App() {
               onChange={(e) => setDescription(e.target.value)}
             />
           </label>
-          <input type="submit" />
+          {/* Estado de Load no POST */}
+          {loading && <input type="submit" disabled value="aguarde..."/>}
+          {!loading && <input type="submit" />}
         </form>
       </div>
     </div>

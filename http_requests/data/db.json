@@ -68,69 +68,15 @@
     },
     {
       "name": "Bruno Alves de Almeida",
-      "price": "5414",
-      "description": "TOPP DEMAIS VERMEIO",
+      "price": "2",
+      "description": "3",
       "id": 12
     },
     {
-      "name": "Ruth Oliveira",
-      "price": "2",
-      "description": "TOPP DEMAIS VERMEIO",
-      "id": 13
-    },
-    {
-      "name": "ELFBAR - Lemom Min",
-      "price": "576",
-      "description": "756gh",
-      "id": 14
-    },
-    {
-      "name": "ELFBAR - PEACH JUICE",
-      "price": "546",
-      "description": "TOPP DEMAIS VERMEIO",
-      "id": 15
-    },
-    {
-      "name": "Bruno Alves de Almeida",
-      "price": "34534",
-      "description": "TOPP DEMAIS VERMEIO",
-      "id": 16
-    },
-    {
-      "name": "ELFBAR - Watermelon lemon ic",
-      "price": "435",
-      "description": "345",
-      "id": 17
-    },
-    {
-      "name": "ELFBAR - Watermelon lemon ic",
-      "price": "435",
-      "description": "345",
-      "id": 18
-    },
-    {
-      "name": "ELFBAR - Watermelon lemon ic",
-      "price": "435",
-      "description": "345",
-      "id": 19
-    },
-    {
       "name": "ELFBAR - Lemom Min21d12",
-      "price": "2112",
-      "description": "TOPP DEMAIS VERMEIO",
-      "id": 20
-    },
-    {
-      "name": "ELFBAR - Watermelon lemon ic2121",
-      "price": "2112",
-      "description": "21d12d12d",
-      "id": 21
-    },
-    {
-      "name": "ELFBAR - Lemom Min233",
-      "price": "312",
-      "description": "312",
-      "id": 22
+      "price": "23",
+      "description": "3",
+      "id": 13
     }
   ]
 }

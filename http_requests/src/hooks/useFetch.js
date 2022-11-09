@@ -10,7 +10,6 @@ export const useFetch = (url) => {
   const [callFetch, setCallFetch] = useState(false);
 
   // Criando estado de Load
-
   const [loading, setLoading] = useState(false);
 
   const httpConfig = (data, method) => {
